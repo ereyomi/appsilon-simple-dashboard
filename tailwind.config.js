@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         primary: ['"Segoe UI"'],
       },
+      fontSize: {
+        xl: ['55px', '73px'],
+      },
     },
   },
   plugins: [],
