@@ -1,7 +1,7 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useCallback, useMemo, useReducer } from 'react';
 
 type stateT = {
-  sideBarState: boolean;
+  displaySidebar: boolean;
   displayDropdown: boolean;
 };
 
@@ -24,13 +24,13 @@ function uiReducer(state: stateT, action: ActionT) {
     case 'OPEN_SIDEBAR': {
       return {
         ...state,
-        sideBarState: true,
+        displaySidebar: true,
       };
     }
     case 'CLOSE_SIDEBAR': {
       return {
         ...state,
-        sideBarState: false,
+        displaySidebar: false,
       };
     }
     case 'OPEN_DROPDOWN': {
@@ -49,25 +49,55 @@ function uiReducer(state: stateT, action: ActionT) {
 }
 
 const initialState: stateT = {
-  sideBarState: false,
+  displaySidebar: false,
   displayDropdown: false,
 };
 
 const UIContext = createContext<stateT | null>(initialState);
 
 const UiContextProvider: React.FunctionComponent<any> = (props) => {
-  // const reducer = useReducer(initialValue);
+  const [state, dispatch] = useReducer(uiReducer, initialState);
 
-  return <UIContext.Provider value={initialState} {...props} />;
+  const openSidebar = useCallback(
+    () => dispatch({ type: 'OPEN_SIDEBAR' }),
+    [dispatch]
+  );
+  const closeSidebar = useCallback(
+    () => dispatch({ type: 'CLOSE_SIDEBAR' }),
+    [dispatch]
+  );
+  const toggleSidebar = useCallback(
+    () =>
+      state.displaySidebar
+        ? dispatch({ type: 'CLOSE_SIDEBAR' })
+        : dispatch({ type: 'OPEN_SIDEBAR' }),
+    [dispatch, state.displaySidebar]
+  );
+  const openDropdown = useCallback(
+    () => dispatch({ type: 'OPEN_DROPDOWN' }),
+    [dispatch]
+  );
+  const closeDropdown = useCallback(
+    () => dispatch({ type: 'CLOSE_DROPDOWN' }),
+    [dispatch]
+  );
+
+  const value = useMemo(
+    () => ({
+      ...state,
+      openSidebar,
+      closeSidebar,
+      toggleSidebar,
+      openDropdown,
+      closeDropdown,
+    }),
+    [state]
+  );
+
+  return <UIContext.Provider value={value} {...props} />;
 };
 
-export const ManageUiContext: React.FunctionComponent<{
-  children: React.ReactNode;
-}> = ({ children }): JSX.Element => {
-  return <UiContextProvider> {children}</UiContextProvider>;
-};
-
-const useUIContext = () => {
+export const useUIContext = (): any => {
   const context = React.useContext(UIContext);
   if (context === undefined) {
     throw new Error(`useUI must be used within a UIProvider`);
@@ -75,4 +105,8 @@ const useUIContext = () => {
   return context;
 };
 
-export default useUIContext;
+export const ManageUiContext: React.FunctionComponent<{
+  children: React.ReactNode;
+}> = ({ children }): JSX.Element => {
+  return <UiContextProvider> {children}</UiContextProvider>;
+};
