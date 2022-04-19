@@ -14,6 +14,9 @@ module.exports = {
         lg: ['16px', '21px'],
         xl: ['55px', '73px'],
       },
+      boxShadow: {
+        sideBarShadow: '10px 3px 15px rgba(0, 0, 0, 0.05)',
+      },
     },
   },
   plugins: [],

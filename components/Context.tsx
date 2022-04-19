@@ -49,7 +49,7 @@ function uiReducer(state: stateT, action: ActionT) {
 }
 
 const initialState: stateT = {
-  displaySidebar: false,
+  displaySidebar: true,
   displayDropdown: false,
 };
 

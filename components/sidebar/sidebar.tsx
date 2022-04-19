@@ -3,9 +3,16 @@ import { useUIContext } from '../Context';
 
 const Sidebar: FunctionComponent<any> = (): JSX.Element => {
   const { displaySidebar } = useUIContext();
-  console.log(displaySidebar);
   return (
-    <div className='w-screen h-screen absolute inset-0 bg-black/[0.4] z-[1000] grid place-items-center'></div>
+    <div
+      className={`${
+        !displaySidebar && ' hidden '
+      } w-screen h-screen absolute inset-0 bg-black/[0.4] z-[1000]`}
+    >
+          <div className='!w-[306px] h-screen shadow-sideBarShadow bg-white'>
+              sdsdsd
+      </div>
+    </div>
   );
 };
 
