@@ -1,17 +1,64 @@
-import React, { createContext } from 'react';
+import React, { createContext, useReducer } from 'react';
 
-type UiContextI = {
+type stateT = {
   sideBarState: boolean;
+  displayDropdown: boolean;
 };
 
-const initialValue = {
+type ActionT =
+  | {
+      type: 'OPEN_SIDEBAR';
+    }
+  | {
+      type: 'CLOSE_SIDEBAR';
+    }
+  | {
+      type: 'OPEN_DROPDOWN';
+    }
+  | {
+      type: 'CLOSE_DROPDOWN';
+    };
+
+function uiReducer(state: stateT, action: ActionT) {
+  switch (action.type) {
+    case 'OPEN_SIDEBAR': {
+      return {
+        ...state,
+        sideBarState: true,
+      };
+    }
+    case 'CLOSE_SIDEBAR': {
+      return {
+        ...state,
+        sideBarState: false,
+      };
+    }
+    case 'OPEN_DROPDOWN': {
+      return {
+        ...state,
+        displayDropdown: true,
+      };
+    }
+    case 'CLOSE_DROPDOWN': {
+      return {
+        ...state,
+        displayDropdown: false,
+      };
+    }
+  }
+}
+
+const initialState: stateT = {
   sideBarState: false,
+  displayDropdown: false,
 };
 
-const UIContext = createContext<UiContextI | null>(initialValue);
+const UIContext = createContext<stateT | null>(initialState);
 
 const UiContextProvider: React.FunctionComponent<any> = (props) => {
-  return <UIContext.Provider value={initialValue} {...props} />;
+  // const reducer = useReducer(initialValue);
+
+  return <UIContext.Provider value={initialState} {...props} />;
 };
 
 export const ManageUiContext: React.FunctionComponent<{
