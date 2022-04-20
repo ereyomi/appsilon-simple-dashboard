@@ -17,15 +17,15 @@ const Sidebar: FunctionComponent<any> = (): JSX.Element => {
   return (
     <div
       className={`${
-        !displaySidebar && ' hidden '
-      } w-screen md:w-[306px] h-screen absolute inset-0 bg-black/[0.2] z-[1000]`}
+        displaySidebar ? 'block' : ' hidden'
+      } w-screen md:w-[306px] h-screen absolute inset-0 bg-black/[0.2] z-[1000] md:!block`}
       onClick={overLayCloseSidebar}
     >
       <div
         onClick={sidebarClose}
         className={` fixed w-[306px] h-screen shadow-sideBarShadow bg-white pt-[30px] pb-[33px] px-[58px] flex flex-col justify-between ${
           displaySidebar ? 'translate-x-[0%]' : '-translate-x-[100%]'
-        } ease-in-out duration-300`}
+        } ease-in-out duration-300 md:!translate-x-[0%]`}
       >
         <div>
           <div className='flex flex-row items-center justify-center'>
