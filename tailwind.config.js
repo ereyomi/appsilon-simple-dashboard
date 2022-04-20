@@ -22,6 +22,16 @@ module.exports = {
         secondary: '#A2A4B9',
         tertiary: '#888CB7',
       },
+      keyframes: {
+        translateXLeftToRightfull: {
+          '00%': { transform: 'translateX(-100%)' },
+          '50%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
+      },
+      animation: {
+        customTransX: 'translateXLeftToRightfull 1s ease-in-out',
+      },
     },
   },
   plugins: [],

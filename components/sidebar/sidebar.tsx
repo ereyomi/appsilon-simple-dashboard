@@ -18,12 +18,14 @@ const Sidebar: FunctionComponent<any> = (): JSX.Element => {
     <div
       className={`${
         !displaySidebar && ' hidden '
-      } w-screen md:w-[306px] h-screen absolute inset-0 bg-black/[0.4] z-[1000]`}
+      } w-screen md:w-[306px] h-screen absolute inset-0 bg-black/[0.2] z-[1000]`}
       onClick={overLayCloseSidebar}
     >
       <div
         onClick={sidebarClose}
-        className='!w-[306px] h-screen shadow-sideBarShadow bg-white pt-[30px] pb-[33px] px-[58px] flex flex-col justify-between'
+        className={` fixed w-[306px] h-screen shadow-sideBarShadow bg-white pt-[30px] pb-[33px] px-[58px] flex flex-col justify-between ${
+          displaySidebar ? 'translate-x-[0%]' : '-translate-x-[100%]'
+        } ease-in-out duration-300`}
       >
         <div>
           <div className='flex flex-row items-center justify-center'>
@@ -43,14 +45,14 @@ const Sidebar: FunctionComponent<any> = (): JSX.Element => {
               width={78}
             />
           </div>
-          <p className='text-center text-lg font-bold text-[#888CB7]'>
+          <p className='text-center text-lg font-bold text-tertiary'>
             Hello ! Rusalba Ruiz
           </p>
-          <p className='text-center text-xs font-normal text-[#A2A4B9] my-[4px]'>
+          <p className='text-center text-xs font-normal text-secondary my-[4px]'>
             Welcome Back To Your Insurance Portal
           </p>
           <p className='font-normal text-[14px] leading-[19px] text-center'>
-            <span className='text-[#A2A4B9]'>Your Plan : </span>
+            <span className='text-secondary'>Your Plan : </span>
             <span className='text-[#33D69F]'>Free</span>
           </p>
           <div className='mt-[20px] mb-[50px] flex justify-center'>
