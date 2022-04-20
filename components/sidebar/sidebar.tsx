@@ -4,14 +4,27 @@ import Image from 'next/image';
 import { menuT, sideBarMenus } from './sidebar.menu';
 
 const Sidebar: FunctionComponent<any> = (): JSX.Element => {
-  const { displaySidebar } = useUIContext();
+  const { displaySidebar, closeSidebar } = useUIContext();
+
+  const overLayCloseSidebar = (e: any) => {
+    closeSidebar();
+  };
+
+  const sidebarClose = (e: any) => {
+    e.stopPropagation();
+  };
+
   return (
     <div
       className={`${
         !displaySidebar && ' hidden '
-      } w-screen h-screen absolute inset-0 bg-black/[0.4] z-[1000]`}
+      } w-screen md:w-[306px] h-screen absolute inset-0 bg-black/[0.4] z-[1000]`}
+      onClick={overLayCloseSidebar}
     >
-      <div className='!w-[306px] h-screen shadow-sideBarShadow bg-white pt-[30px] pb-[33px] px-[58px] flex flex-col justify-between'>
+      <div
+        onClick={sidebarClose}
+        className='!w-[306px] h-screen shadow-sideBarShadow bg-white pt-[30px] pb-[33px] px-[58px] flex flex-col justify-between'
+      >
         <div>
           <div className='flex flex-row items-center justify-center'>
             <Image
