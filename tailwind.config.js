@@ -16,6 +16,7 @@ module.exports = {
       },
       boxShadow: {
         sideBarShadow: '10px 3px 15px rgba(0, 0, 0, 0.05)',
+        navShadow: '3px 5px 15px rgba(0, 0, 0, 0.1)',
       },
       colors: {
         primary: '#713BDB',
