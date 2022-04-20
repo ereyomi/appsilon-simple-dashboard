@@ -12,7 +12,7 @@
 
 html,
 body {
-  @apply min-w-full box-border bg-white font-primary;
+  @apply min-w-full box-border bg-[#F4F5F9] font-primary;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
