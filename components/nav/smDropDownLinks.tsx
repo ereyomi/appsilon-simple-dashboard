@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 
-const OtherNav: FunctionComponent<any> = (): JSX.Element => {
+const SmDropDownLinks: FunctionComponent<any> = (): JSX.Element => {
   const [isOpenState, setOpenState] = useState<boolean>(false);
   return (
     <div className='relative inline-block'>
@@ -26,4 +26,4 @@ const OtherNav: FunctionComponent<any> = (): JSX.Element => {
   );
 };
 
-export default OtherNav;
+export default SmDropDownLinks;
