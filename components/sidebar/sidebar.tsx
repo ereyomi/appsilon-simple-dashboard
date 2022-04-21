@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { useUIContext } from '../Context';
 import Image from 'next/image';
-import { menuT, sideBarMenus } from './sidebar.menu';
+import { menuT, sideBarMenus } from './sidebar.menu.type';
+import SidebarLinks from './SidebarLinks';
 
 const Sidebar: FunctionComponent<any> = (): JSX.Element => {
   const { displaySidebar, closeSidebar } = useUIContext();
@@ -67,23 +68,14 @@ const Sidebar: FunctionComponent<any> = (): JSX.Element => {
             </button>
           </div>
           <div className='flex flex-col pl-[10px]'>
-            {sideBarMenus.map((v: menuT) => (
-              <div
-                className={`flex flex-row items-center mb-[26px] ${
-                  v.isActive ? ' text-primary ' : ' text-secondary '
-                }`}
-                key={v.id}
-              >
-                <Image
-                  src={`/svgs/${v.iconName}.svg`}
-                  alt={v.iconName}
-                  height={20}
-                  width={20}
-                />
-                <span className='ml-[25px] font-normal text-lg  text-inherit'>
-                  {v.label}
-                </span>
-              </div>
+            {sideBarMenus.map((v: menuT, index: number) => (
+              <SidebarLinks
+                id={v.id}
+                iconName={v.iconName}
+                label={v.label}
+                isActive={v.isActive}
+                key={index}
+              />
             ))}
           </div>
         </div>
