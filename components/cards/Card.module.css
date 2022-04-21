@@ -1,0 +1,9 @@
+.cardBgGradientPrimary {
+  background: linear-gradient(90deg, #ececec 0%, #f2f1f1 111.47%);
+}
+.cardBgGradientSecondary {
+  background: linear-gradient(90deg, #33d69f 0%, #50edb8 111.47%);
+}
+.cardBgGradientTertiary {
+  background: linear-gradient(90deg, #713BDB 0%, #A886E9 111.47%);
+}
