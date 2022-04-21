@@ -18,6 +18,7 @@ module.exports = {
         sideBarShadow: '10px 3px 15px rgba(0, 0, 0, 0.05)',
         navShadow: '3px 5px 15px rgba(0, 0, 0, 0.1)',
         jumbotronShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)',
+        cardShadow: '3px 3px 4px rgba(0, 0, 0, 0.06)',
       },
       colors: {
         primary: '#713BDB',

@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Cards from '../components/cards/cards';
 import Jumbo from '../components/jumbo/jumbo';
 import Nav from '../components/nav/nav';
 import Sidebar from '../components/sidebar/sidebar';
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
         <div className='md:pl-[306px] pt-[84px]'>
           <div className='md:p-[32px]'>
             <Jumbo />
+            <Cards/>
           </div>
         </div>
       </main>

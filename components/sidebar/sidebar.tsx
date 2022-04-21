@@ -18,7 +18,7 @@ const Sidebar: FunctionComponent<any> = (): JSX.Element => {
     <div
       className={`${
         displaySidebar ? 'block' : ' hidden'
-      } w-screen md:w-[306px] h-screen absolute inset-0 bg-black/[0.2] z-[1000] md:!block`}
+      } w-screen md:w-[306px] h-screen absolute inset-0 bg-black/[0.2] z-[1000] md:!block md:rounded-br-[20px]`}
       onClick={overLayCloseSidebar}
     >
       <div
