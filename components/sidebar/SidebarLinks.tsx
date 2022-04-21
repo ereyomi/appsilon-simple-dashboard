@@ -10,7 +10,7 @@ const SidebarLinks: FunctionComponent<menuT> = ({
 }): JSX.Element => {
   return (
     <div
-      className={`flex flex-row items-center mb-[26px] ${
+      className={`flex flex-row items-center mb-[26px] cursor-pointer ${
         isActive ? ' text-primary ' : ' text-secondary '
       }`}
       key={id}

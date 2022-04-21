@@ -79,11 +79,18 @@ const Sidebar: FunctionComponent<any> = (): JSX.Element => {
             ))}
           </div>
         </div>
-        <footer className='flex flex-row items-center justify-center'>
-          <Image src='/svgs/log-out.svg' alt='log-out' height={18} width={18} />
-          <p className='font-semibold text-[18px] leading-[24px] ml-[14px] text-secondary'>
-            Log Out
-          </p>
+        <footer className='w-full flex flex-row items-center justify-center'>
+          <div className='flex flex-row items-center justify-center cursor-pointer'>
+            <Image
+              src='/svgs/log-out.svg'
+              alt='log-out'
+              height={18}
+              width={18}
+            />
+            <p className='font-semibold text-[18px] leading-[24px] ml-[14px] text-secondary'>
+              Log Out
+            </p>
+          </div>
         </footer>
       </div>
     </div>
