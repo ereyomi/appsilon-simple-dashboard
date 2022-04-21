@@ -29,7 +29,7 @@ const cardsData: cardT[] = [
 
 const Cards: FunctionComponent<any> = (): JSX.Element => {
   return (
-    <div className='py-[20px] px-[20px] flex flex-wrap gap-[19px]'>
+    <div className='py-[20px] px-[20px] md:px-0 flex flex-wrap gap-[19px]'>
       {cardsData.map((card: cardT, index: number) => (
         <Card
           mainPrice={card.mainPrice}

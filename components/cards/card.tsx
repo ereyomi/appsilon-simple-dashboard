@@ -10,13 +10,9 @@ const Card: FunctionComponent<cardT> = ({
   claimPriceWidth,
 }): JSX.Element => {
   return (
-    <div
-      className='w-full h-auto lg:w-[314px] lg:h-[298px] bg-white shadow-cardShadow px-[26px] pt-[8px] pb-[28px]'
-    >
+    <div className='w-full md:w-5/6 h-auto lg:w-[314px] lg:h-[298px] bg-white shadow-cardShadow px-[26px] pt-[8px] pb-[28px]'>
       <div className='relative'>
-        <span className='font-normal text-xl text-muteColor'>
-          {mainPrice}
-        </span>
+        <span className='font-normal text-xl text-muteColor'>{mainPrice}</span>
         <span className='text-[35px] leading-[47px] absolute top-0 ml-[3px] text-primary'>
           $
         </span>

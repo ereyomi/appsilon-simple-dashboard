@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Jumbo: FunctionComponent<any> = (): JSX.Element => {
   return (
-    <div className='w-full md:w-5/6 h-[311px] overflow-hidden relative bg-[#F8F9FF] shadow-jumbotronShadow'>
+    <div className='w-full md:w-5/6 h-[311px] overflow-hidden relative z-10 bg-[#F8F9FF] shadow-jumbotronShadow'>
       <img
         src='/svgs/jumb-img.svg'
         alt='jumb-img'

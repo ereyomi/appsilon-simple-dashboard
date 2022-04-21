@@ -31,7 +31,7 @@ const Nav: FunctionComponent<any> = (): JSX.Element => {
   const { openSidebar } = useUIContext();
   return (
     <>
-      <nav className='flex flex-row items-center justify-between h-[87px] p-[10px] w-screen fixed top-0 left-0 right-0 md:hidden bg-white'>
+      <nav className='flex flex-row items-center justify-between h-[87px] p-[10px] w-screen fixed top-0 left-0 right-0 md:hidden bg-white z-[999]'>
         <button
           onClick={openSidebar}
           type='button'
@@ -47,7 +47,7 @@ const Nav: FunctionComponent<any> = (): JSX.Element => {
         />
         <OtherNav />
       </nav>
-      <nav className='hidden md:flex w-screen h-[87px] fixed top-0 right-0 bg-white pl-[306px] items-center justify-center'>
+      <nav className='hidden md:flex w-screen h-[87px] fixed top-0 right-0 bg-white pl-[306px] items-center justify-center  z-[999]'>
         <ul className='p-0 flex flex-row items-center w-full'>
           {navLink.map((v: NavLinkT) => (
             <li
