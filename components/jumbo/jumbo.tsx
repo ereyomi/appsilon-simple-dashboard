@@ -14,7 +14,7 @@ const Jumbo: FunctionComponent<any> = (): JSX.Element => {
         alt='nbnnb'
         className='absolute bottom-0 left-0 right-0 w-full'
       />
-      <div className='pt-[20px] md:pt-0 px-[20px] relative z-10 md:absolute lg:right-[72px]  md:top-[60px] lg:top-[107px]'>
+      <div className='pt-[20px] md:pt-[60px] px-[20px] xl:pt-0 relative z-10 xl:absolute xl:right-[72px] xl:top-[107px]'>
         <p className='font-semibold text-[30px] leading-[30px] text-center text-muteColor'>
           20% Safe On Your First Account
         </p>
