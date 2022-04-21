@@ -21,7 +21,7 @@ const SidebarLinks: FunctionComponent<menuT> = ({
         height={20}
         width={20}
       />
-      <span className='ml-[25px] font-normal text-lg  text-inherit'>
+      <span className='ml-[25px] font-normal text-lg text-inherit'>
         {label}
       </span>
     </div>
