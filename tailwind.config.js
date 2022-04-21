@@ -17,21 +17,13 @@ module.exports = {
       boxShadow: {
         sideBarShadow: '10px 3px 15px rgba(0, 0, 0, 0.05)',
         navShadow: '3px 5px 15px rgba(0, 0, 0, 0.1)',
+        jumbotronShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)',
       },
       colors: {
         primary: '#713BDB',
         secondary: '#A2A4B9',
         tertiary: '#888CB7',
-      },
-      keyframes: {
-        translateXLeftToRightfull: {
-          '00%': { transform: 'translateX(-100%)' },
-          '50%': { transform: 'translateX(-50%)' },
-          '100%': { transform: 'translateX(0%)' },
-        },
-      },
-      animation: {
-        customTransX: 'translateXLeftToRightfull 1s ease-in-out',
+        muteColor: '#42474A',
       },
     },
   },

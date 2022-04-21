@@ -12,7 +12,7 @@ const OtherNav: FunctionComponent<any> = (): JSX.Element => {
         &#8230;
       </button>
       <div
-        className={`w-max absolute z-[10000] right-0 shadow-sideBarShadow p-[10px] ${
+        className={`w-max absolute z-[10000] right-0 shadow-sideBarShadow p-[20px] bg-white ${
           isOpenState ? 'block' : 'hidden'
         }`}
       >
